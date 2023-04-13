@@ -1,3 +1,5 @@
+import java.util.Comparator;
+
 public class Person {
 
     private String name;
@@ -9,6 +11,7 @@ public class Person {
         this.surName = surName;
         this.age = age;
     }
+
 
     public String getName() {
         return name;

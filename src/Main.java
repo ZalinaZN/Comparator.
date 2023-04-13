@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Main {
@@ -15,7 +16,9 @@ public class Main {
         people.add(new Person("Kolobok", "Kolobok Ya Tebya S'em", 1));
         people.add(new Person("Kuz'ma", "Petrov Vodkin", 55));
 
-        Collections.sort(people, new PersonComparator());
+        Comparator<Person> comparator = (o1,o2)->
+                Comparator.comparing(Person::check).thenComparing(Person::getAge).compare(o1,o2);
+       Collections.sort(people, comparator);
         System.out.println(people);
     }
 }
